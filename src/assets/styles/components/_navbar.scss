@@ -61,14 +61,19 @@
   &-link {
     color: white;
     padding: 0 0 4.2rem 0;
+    font-weight: 700;
     &:last-child {
       padding: 0;
     }
     @include m.tabletMed {
       color: v.$text-color;
-      padding: 0 3.1rem;
+      padding: 0 1.55rem;
+      &:first-child {
+        padding-left: 4.5rem;
+      }
       &:last-child {
         color: white;
+        padding: 0;
       }
     }
   }
