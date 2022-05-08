@@ -1,18 +1,17 @@
 @use "variables" as v;
-
+@use "../base/mixins" as m;
 .text-center {
   text-align: center;
 }
-.bg {
-  min-height: 100vh;
-  background-color: v.$background;
-  &_navbar {
-    background-color: v.$bgSidebar;
-  }
-}
-.text {
-  color: v.$white;
-  &_info {
-    color: v.$gray;
+.button {
+  max-width: 27.9rem;
+  width: 90%;
+  text-align: center;
+  background-color: v.$cta-color;
+  color: white;
+  padding: 1.5rem 0;
+  border-radius: 28rem;
+  @include m.tabletMed {
+    width: 13.5rem;
   }
 }
