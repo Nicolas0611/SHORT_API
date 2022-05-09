@@ -12,6 +12,7 @@
     position: unset;
   }
   &-content {
+    z-index: 10;
     @include m.tabletMed {
       width: 100%;
     }
