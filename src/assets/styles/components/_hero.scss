@@ -1,0 +1,78 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.hero {
+  &-grid {
+    @include m.grid(1, 1rem);
+    @include m.tabletMed {
+      @include m.grid(2, 1rem);
+      gap: 2;
+      align-items: center;
+    }
+  }
+  &-content {
+    grid-row: 2 / 3;
+    text-align: center;
+    align-items: center;
+    @include m.tabletMed {
+      grid-column: 1/2;
+      grid-row: 1/2;
+      text-align: left;
+      justify-content: center;
+      padding: 10rem 0;
+    }
+    @include m.desktopMed {
+      padding: 14rem 0;
+    }
+  }
+  &-text {
+    font-size: 4.2rem;
+    font-weight: 700;
+    color: v.$titleColor;
+    @include m.tabletMed {
+      font-size: 4.8rem;
+      margin: 2rem 0;
+    }
+    @include m.desktopMed {
+      font-size: 5.8rem;
+    }
+    @include m.desktopBig {
+      font-size: 8rem;
+    }
+  }
+  &-parragraph {
+    font-size: 1.8rem;
+    color: v.$text-color;
+    @include m.tabletMed {
+      width: 90%;
+      margin: 0 0 3.1rem 0;
+    }
+    @include m.desktopMed {
+      width: 95%;
+      margin: 0 0 3.1rem 0;
+    }
+    @include m.desktopBig {
+      width: 80%;
+      margin: 0 0 3.1rem 0;
+    }
+  }
+  &-button {
+    margin: 0 auto;
+    @include m.tabletMed {
+      margin: 0;
+    }
+  }
+  &-image {
+    @include m.tabletMed {
+      grid-column: 2/3;
+    }
+    &_img {
+      transform: translateX(7rem);
+      width: 75rem;
+      display: unset;
+      @include m.tabletMed {
+        transform: unset;
+      }
+    }
+  }
+}
