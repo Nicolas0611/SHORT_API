@@ -1,0 +1,50 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+.result {
+  background-color: white;
+  margin-top: 2.4rem;
+  border-radius: 0.5rem;
+  @include m.tabletMed {
+    max-height: 10.2rem;
+  }
+  &-content {
+    padding: 1.5rem 1.6rem;
+    @include m.tabletMed {
+      display: flex;
+      padding: 1.8rem 3.2rem;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  &-link {
+    padding-bottom: 1.5rem;
+    @include m.tabletMed {
+      padding-bottom: 0;
+    }
+  }
+  &-response {
+    @include m.tabletMed {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+  &-shorten {
+    color: v.$cta-color;
+    padding-bottom: 1.7rem;
+    @include m.tabletMed {
+      padding-right: 2.4rem;
+      padding-bottom: 0rem;
+    }
+  }
+  &-copy {
+    background-color: v.$cta-color;
+    padding: 1.3rem 3.1rem;
+    border-radius: 0.5rem;
+    color: white;
+    width: 100%;
+    @include m.tabletMed {
+      padding: 1.3rem 3.1rem;
+    }
+  }
+}

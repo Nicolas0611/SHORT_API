@@ -1,4 +1,5 @@
 import React from "react";
+import ResultCard from "./ResultCard";
 
 const Searchbar = () => {
   return (
@@ -15,9 +16,10 @@ const Searchbar = () => {
       </div>
       <div className="searchbar-results">
         <div className="container">
-          <div className="searchbar-result">result 1</div>
-          <div className="searchbar-result">result 2</div>
-          <div className="searchbar-result">result 3</div>
+          <ResultCard />
+          <ResultCard />
+          <ResultCard />
+          <ResultCard />
         </div>
       </div>
     </>
