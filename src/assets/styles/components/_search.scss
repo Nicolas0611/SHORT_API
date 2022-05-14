@@ -1,0 +1,52 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.searchbar {
+  max-width: 110rem;
+  height: 16rem;
+  border-radius: 1rem;
+  background-image: url(src/assets/images/bg-shorten-mobile.svg),
+    linear-gradient(to top, #3a3054, #3a3054);
+  background-repeat: no-repeat;
+  background-position: 110% top, center 92%;
+  margin: 0 auto;
+  width: 95%;
+  margin-top: -8rem;
+  @include m.tabletMed {
+    height: 14rem;
+  }
+  &-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    @include m.tabletMed {
+      flex-direction: row;
+      padding: 0 4.4rem;
+    }
+  }
+  &-input {
+    max-width: 76.9rem;
+    min-width: 27.9rem;
+    width: 90%;
+    padding: 1.5rem 1.5rem;
+    border-radius: 0.5rem;
+    border: 0px;
+  }
+  &-button {
+    background-color: v.$cta-color;
+    margin-top: 1.6rem;
+    width: 90%;
+    padding: 1.5rem 0;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 500;
+    border-radius: 0.8rem;
+    @include m.tabletMed {
+      margin: 0;
+      width: 18.8rem;
+      margin-left: 2.2rem;
+    }
+  }
+}
