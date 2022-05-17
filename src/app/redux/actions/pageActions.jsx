@@ -12,11 +12,7 @@ export const clickAction = (mode) => {
   };
 };
 
-export const shortAction = (
-  link = "https://www.facebook.com/",
-  setList,
-  list
-) => {
+export const shortAction = (link = "https://www.facebook.com/") => {
   return async (dispatch) => {
     let short = [];
     const url = `https://api.shrtco.de/v2/shorten?url=${link}`;
@@ -31,7 +27,7 @@ export const shortAction = (
             original: responselink.original_link,
           });
           arrayList.push(short[0]);
-          dispatch(shortLink(arrayList));
+          dispatch(shortLink([...arrayList]));
         }
       })
       .catch(() => {

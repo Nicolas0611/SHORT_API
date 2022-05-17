@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
-const ResultCard = () => {
+const ResultCard = (props) => {
   return (
     <div className="result">
       <div className="result-content">
-        <a className="result-link">https://www.frontendmentor.io</a>
+        <a className="result-link">{props.original}</a>
         <div className="result-response">
-          <a className="result-shorten">https://rel.ink/k4lKyk</a>
+          <a className="result-shorten">{props.short_link}</a>
           <button className="result-copy">Copy</button>
         </div>
       </div>
