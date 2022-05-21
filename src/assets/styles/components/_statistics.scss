@@ -1,0 +1,98 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.statisticsContainer:first-child {
+  &-separator:first-child {
+    background-color: unset;
+    width: unset;
+    height: unset;
+  }
+}
+.statisticsContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  @include m.tabletMed {
+    flex-direction: row;
+  }
+  &-separator {
+    background-color: v.$cta-color;
+    width: 0.8rem;
+    height: 7rem;
+    @include m.tabletMed {
+      width: 8rem;
+      height: 0.8rem;
+    }
+  }
+}
+
+.statistics {
+  padding-bottom: 7.8rem;
+  @include m.tabletMed {
+    padding-bottom: 6.8rem;
+  }
+  &-containerCards {
+    @include m.tabletMed {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+  &-title {
+    font-size: 4rem;
+    font-weight: 700;
+    text-align: center;
+    color: v.$titleColor;
+  }
+  &-text {
+    font-size: 1.6rem;
+    color: v.$text-color;
+    text-align: center;
+    line-height: 1.8;
+    padding: 0 3rem;
+    padding-bottom: 6rem;
+    padding-top: 2rem;
+    margin: 0;
+  }
+  &-parragraph {
+    font-size: 1.6rem;
+    color: v.$text-color;
+    text-align: center;
+    line-height: 1.8;
+    padding: 0 3rem;
+    padding-bottom: 10rem;
+  }
+  &-card {
+    background-color: white;
+    min-height: 26.7rem;
+    border-radius: 1rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    position: relative;
+    @include m.tabletMed {
+      min-width: 15rem;
+    }
+  }
+  &-img {
+    position: absolute;
+    background-color: v.$primary-100;
+    width: 8.6rem;
+    height: 8.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    left: 50%;
+    top: -10%;
+    transform: translate(-50%, -10%);
+  }
+  &-subtitle {
+    text-align: center;
+    margin: 0;
+    padding-top: 8.3rem;
+  }
+}
+
+.statisticsContainer:nth-child(1) .statisticsContainer-separator {
+  background-color: unset;
+  width: unset;
+  height: unset;
+}

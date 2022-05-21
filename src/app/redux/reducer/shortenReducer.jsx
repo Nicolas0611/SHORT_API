@@ -1,7 +1,8 @@
-import { CLICK_ACTION } from "../types/pageTypes";
+import { CLICK_ACTION, SHORTEN_LINKS } from "../types/pageTypes";
 
 const initialState = {
   click: false,
+  shortenlink: [],
 };
 
 export const shortenAPI = (state = initialState, action) => {
@@ -11,6 +12,12 @@ export const shortenAPI = (state = initialState, action) => {
         ...state,
         click: action.payload,
       };
+    case SHORTEN_LINKS:
+      return {
+        ...state,
+        shortenlink: action.payload,
+      };
+
     default:
       return state;
   }
