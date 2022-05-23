@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 import ResultCard from "./ResultCard";
 import { useDispatch, useSelector } from "react-redux";
-import { shortAction } from "../redux/actions/pageActions";
+import { errorMsg, shortAction } from "../redux/actions/pageActions";
 import { useState } from "react";
 
 const Searchbar = () => {
   const dispatch = useDispatch();
   const links = useSelector((state) => state.shortenlink);
+  const error = useSelector((state) => state.error);
   const [text, setText] = useState("");
 
   const handleRequest = (e) => {
@@ -20,14 +21,21 @@ const Searchbar = () => {
   }, [links]);
 
   const handleText = (value) => {
-    setText(value);
+    if (value != " ") {
+      setText(value);
+      dispatch(errorMsg(false));
+    }
   };
   return (
     <>
       <div className="searchbar">
         <div className=" searchbar-content">
           <input
-            className="searchbar-input"
+            className={
+              error
+                ? "searchbar-input searchbar-input_error"
+                : "searchbar-input"
+            }
             type="text"
             placeholder="Shorten a link here"
             value={text}
