@@ -1,4 +1,4 @@
-import { CLICK_ACTION, SHORTEN_LINKS } from "../types/pageTypes";
+import { CLICK_ACTION, ERROR_MSG, SHORTEN_LINKS } from "../types/pageTypes";
 import axios from "axios";
 
 let arrayList = [];
@@ -31,7 +31,7 @@ export const shortAction = (link = "https://www.facebook.com/") => {
         }
       })
       .catch(() => {
-        console.log("Error");
+        dispatch(errorMsg(true));
       });
   };
 };
@@ -39,5 +39,11 @@ export const shortLink = (list) => {
   return {
     type: SHORTEN_LINKS,
     payload: list,
+  };
+};
+export const errorMsg = (error) => {
+  return {
+    type: ERROR_MSG,
+    payload: error,
   };
 };

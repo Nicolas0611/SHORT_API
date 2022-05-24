@@ -33,6 +33,12 @@
     padding: 1.5rem 1.5rem;
     border-radius: 0.5rem;
     border: 0px;
+    &_error {
+      border: 3px solid #c00;
+      &::placeholder {
+        color: #c00;
+      }
+    }
   }
   &-button {
     background-color: v.$cta-color;
