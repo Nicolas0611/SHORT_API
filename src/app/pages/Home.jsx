@@ -3,12 +3,12 @@ import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Searchbar from "../components/Searchbar";
 import Cards from "../components/Cards";
+import Layout from "../layout/Layout";
 import { cardContent } from "../libraries/data";
 
 const Home = () => {
   return (
-    <>
-      <Navbar />
+    <Layout>
       <main className="home">
         <section className="hero">
           <Hero />
@@ -33,9 +33,16 @@ const Home = () => {
             ))}
           </div>
         </section>
-        <section className="getStarted"></section>
+        <section className="getStarted">
+          <h2 className="getStarted_title">Boost your links today</h2>
+          <div className="button ">
+            <a className="navbar-link" href="">
+              Get Started
+            </a>
+          </div>
+        </section>
       </main>
-    </>
+    </Layout>
   );
 };
 
