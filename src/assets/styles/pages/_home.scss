@@ -33,3 +33,44 @@
     text-align: center;
   }
 }
+.footer {
+  background-color: v.$dark-color;
+  padding: 5.4rem 0;
+  @include m.grid(1, 5rem);
+  @include m.tabletMed {
+    display: grid;
+    grid-template-columns: 20% auto;
+  }
+  &-img {
+    filter: brightness(0.1);
+    filter: invert(100%);
+  }
+  &-imgFooter {
+    margin: 0 auto;
+  }
+  &-title {
+    color: white;
+    font-weight: 700;
+    padding-bottom: 3.4rem;
+    width: fit-content;
+    margin: 0 auto;
+  }
+  &-link {
+    padding-bottom: 2.2rem;
+    color: v.$text-color;
+    width: fit-content;
+    margin: 0 auto;
+  }
+  &-content {
+    @include m.grid(1, 2rem);
+    @include m.tabletMed {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+  &-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+}

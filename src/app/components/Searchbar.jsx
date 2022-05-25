@@ -47,7 +47,7 @@ const Searchbar = () => {
         </div>
       </div>
       <div className="searchbar-results">
-        <div className="container">
+        <div className="result-container">
           {links &&
             links.map((link, index) => <ResultCard key={index} {...link} />)}
         </div>
