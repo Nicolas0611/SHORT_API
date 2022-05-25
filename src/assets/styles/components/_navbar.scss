@@ -8,10 +8,12 @@
   align-items: center;
   padding: 4rem 0;
   position: relative;
+  background-color: white;
   @include m.tabletMed {
     position: unset;
   }
   &-content {
+    z-index: 10;
     @include m.tabletMed {
       width: 100%;
     }
